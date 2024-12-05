@@ -12,11 +12,6 @@ import java.util.stream.IntStream;
 
 public class DistanceCalculator {
 
-    public static Integer calculateTotalDistance(String input) {
-        List<Integer>[] numbers = parseInputFromFileToArrays(input);
-        blablabla(numbers[0], numbers[1]);
-        return calculateSumOfDifferences(numbers[0], numbers[1]);
-    }
 
     public static List<Integer>[] parseInputFromFileToArrays(String input) {
 
@@ -48,7 +43,7 @@ public class DistanceCalculator {
 
     }
 
-    public static void blablabla(List<Integer> left, List<Integer> right) {
+    public static long CalculateATotalSimilarityScore(List<Integer> left, List<Integer> right) {
 
         long totalResult = 0;
 
@@ -62,10 +57,11 @@ public class DistanceCalculator {
         }
 
 //        System.out.println("Общий результат: " + totalResult);
+        return totalResult;
 
     }
 
-    public static Integer calculateSumOfDifferences(List<Integer> left, List<Integer> right) {
+    public static Integer calculateTotalDistance(List<Integer> left, List<Integer> right) {
 
         return IntStream.range(0, left.size())
                 .map(i -> Math.abs(left.get(i) - right.get(i)))
